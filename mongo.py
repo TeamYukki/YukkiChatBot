@@ -8,8 +8,9 @@
 # All rights reserved.
 #
 
-from config import MONGO_DB_URI
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
+
+from config import MONGO_DB_URI
 
 db = None
 
@@ -22,13 +23,12 @@ if MONGO_DB_URI != None:
     modedb = db.mode
     modelist = {}
 
-# Served Users
+    # Served Users
     async def is_served_user(user_id: int) -> bool:
         user = await usersdb.find_one({"user_id": user_id})
         if not user:
             return False
         return True
-
 
     async def get_served_users() -> list:
         users_list = []
@@ -36,16 +36,13 @@ if MONGO_DB_URI != None:
             users_list.append(user)
         return users_list
 
-
     async def add_served_user(user_id: int):
         is_served = await is_served_user(user_id)
         if is_served:
             return
         return await usersdb.insert_one({"user_id": user_id})
 
-
-
-# Banned Users
+    # Banned Users
     async def get_banned_users() -> list:
         results = []
         async for user in blockeddb.find({"user_id": {"$gt": 0}}):
@@ -53,12 +50,10 @@ if MONGO_DB_URI != None:
             results.append(user_id)
         return results
 
-
     async def get_banned_count() -> int:
         users = blockeddb.find({"user_id": {"$gt": 0}})
         users = await users.to_list(length=100000)
         return len(users)
-
 
     async def is_banned_user(user_id: int) -> bool:
         user = await blockeddb.find_one({"user_id": user_id})
@@ -66,13 +61,11 @@ if MONGO_DB_URI != None:
             return False
         return True
 
-
     async def add_banned_user(user_id: int):
         is_gbanned = await is_banned_user(user_id)
         if is_gbanned:
             return
         return await blockeddb.insert_one({"user_id": user_id})
-
 
     async def remove_banned_user(user_id: int):
         is_gbanned = await is_banned_user(user_id)
@@ -80,7 +73,7 @@ if MONGO_DB_URI != None:
             return
         return await blockeddb.delete_one({"user_id": user_id})
 
-# Forward Mode
+    # Forward Mode
     async def is_group() -> bool:
         chat_id = 123
         mode = modelist.get(chat_id)
@@ -108,12 +101,12 @@ if MONGO_DB_URI != None:
             return await modelist.delete_one({"chat_id": chat_id})
 
 else:
+
     async def is_group() -> bool:
         return False
 
     async def is_banned_user(user_id: int) -> bool:
         return False
-    
+
     async def add_served_user(user_id: int):
         return True
-
