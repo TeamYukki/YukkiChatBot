@@ -1,0 +1,58 @@
+{
+    "name": "Yukki Chat Bot",
+    "description": "A simple Chat-Bot written in Pyrogram using MongoDB",
+    "logo": "https://telegra.ph/file/78bc88b883b22024002cd.jpg",
+    "keywords": [
+      "yukki",
+      "mongodb",
+      "python",
+      "pyrogram"
+    ],
+      "buildpacks": [{
+      "url": "heroku/python"
+    }],
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+    },
+    "repository": "https://github.com/TeamYukki/YukkiChatBot",
+    "env": {
+      "API_ID": {
+        "description": "Get this value from my.telegram.org/apps.",
+        "required": true,
+        "value": ""
+      },
+      "API_HASH": {
+        "description": "Get this value from my.telegram.org/apps.",
+        "required": true,
+        "value": ""
+      },
+      "BOT_TOKEN": {
+        "description": "A Bot token from @BotFather",
+        "required": true,
+        "value": ""
+      },
+      "LOG_GROUP_ID": {
+        "description": "A group id to forward the incoming messages in it.",
+        "required": true,
+        "value": ""
+      },
+      "MONGO_DB_URI": {
+        "description": "Get a mongodb url from https://cloud.mongodb.com.",
+        "required": false,
+        "value": ""
+      },
+      "PRIVATE_START_MESSAGE": {
+        "description": "A welcome message for your bot when someone starts it",
+        "required": true,
+        "value": ""
+      },
+      "SUDO_USER": {
+        "description": "The user id(s) of user(s) whom you would like to add as a SUDO_USER, Multiple values shall be seperated with a space.",
+        "required": true,
+        "value": ""
+      }
+    }
+  }
