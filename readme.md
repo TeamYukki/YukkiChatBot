@@ -57,7 +57,7 @@ shikhar@MacBook~ $ python3 main.py
 
 ## 🗂 License
 
-This project is licensed under the **GNU General Public License v3**. All designs were created by [@NotReallyShikhar](https://github.com/NotReallyShikhar) .
+This project is licensed under the **MIT License**. All designs were created by [@NotReallyShikhar](https://github.com/NotReallyShikhar) .
 
 See [LICENSE](LICENSE) for more information.
 
