@@ -53,7 +53,7 @@ async def init():
             return await message.reply_text(
                 "MONGO_DB_URI var not defined. Please define it first"
             )
-        usage = "**Usage:**\n\n/mode [group | private]\n\n**Group**: All the incoming messages will be forwarded to Log group.\n\n**Private**: All the incoming messages will be forwarded to the Private Messages of SUDO_USERS"
+        usage = "**Usag:**\n\n/mode [group | private]\n\n**Group**: All the incoming messages will be forwarded to Log group.\n\n**Private**: All the incoming messages will be forwarded to the Private Messages of SUDO_USERS"
         if len(message.command) != 2:
             return await message.reply_text(usage)
         state = message.text.split(None, 1)[1].strip()
