@@ -4,8 +4,8 @@
     A simple Chat-Bot written in Pyrogram using Mongodb.
 </h4>
 <p align="center">
-    <a href="https://t.me/TheYukki"> Support Channel </a> •
-    <a href="https://t.me/YukkiSupport"> Support Chat </a> 
+    <a href="https://t.me/lovelesslifee"> Support Channel </a> •
+    <a href="https://t.me/lovelesslifee"> Support Chat </a> 
 </p>
     
 
@@ -22,7 +22,7 @@ A Powerful Telegram Chat Bot written in pyrogram. Useful for Feedbacks , Anonymo
 ## 🚀 Heroku Deployment
 
 <h4>Click the button below to deploy Yukki Chat Bot on Heroku!</h4>    
-<a href="https://dashboard.heroku.com/new?template=https://github.com/TeamYukki/YukkiChatBot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/Raviveyi/YukkiChatBot"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="200""/></a>
 
 
 ## 🖇 VPS Deployment
